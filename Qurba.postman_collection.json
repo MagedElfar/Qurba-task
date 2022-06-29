@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "61615a7c-ea34-49e9-8e6a-d41d8434131e",
+		"name": "Qurba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18389212"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"maged.1992@gmail.com\",\r\n    \"password\": \"123456Ma\",\r\n    \"fullName\": \"maged\",\r\n    \"cuisines\": \"rice , burger\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"maged.1992.me@gmail.com\",\r\n    \"password\": \"123456Ma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "list-usres",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"maged.1992.me@gmail.com\",\r\n    \"password\": \"123456Ma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/list?cuisine=burger",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"list"
+							],
+							"query": [
+								{
+									"key": "cuisine",
+									"value": "burger"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-current-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"maged.1992.me@gmail.com\",\r\n    \"password\": \"123456Ma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurant",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test res 2\",\r\n    \"cuisines\": \"rice, burger\",\r\n    \"lat\": \"31.200000762939\",\r\n    \"long\": \"29.89999961853\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test res 2\",\r\n    \"cuisines\": \"fries, burger , tea\",\r\n    \"lat\": \"31.200000762939\",\r\n    \"long\": \"29.89999961853\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/62bc808c714fc294367794f0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"62bc808c714fc294367794f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-cuisine",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuisine\": \"fries\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/cuisines/62bc808c714fc294367794f0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"cuisines",
+								"62bc808c714fc294367794f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-cuisine",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuisine\": \"fries\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/del-cuisines/62bc808c714fc294367794f0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"del-cuisines",
+								"62bc808c714fc294367794f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/62bc808c714fc294367794f0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"62bc808c714fc294367794f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "cuisines",
+									"value": "rice",
+									"disabled": true
+								},
+								{
+									"key": "cuisines",
+									"value": "salat",
+									"disabled": true
+								},
+								{
+									"key": "long",
+									"value": "29.899999618535",
+									"disabled": true
+								},
+								{
+									"key": "lat",
+									"value": "31.200000762939",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/slug/test-res-1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"slug",
+								"test-res-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/62bb0da359bc2e2e0f10fe4a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"62bb0da359bc2e2e0f10fe4a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmM5MjYwMzZmODM3MTc2NTI3MTdiNSIsImlhdCI6MTY1NjUyNTQwOCwiZXhwIjoxNjU2NTQzNDA4fQ.nm_w_rhQZw2PGfqfaeI6Rq3zG0PK8LI_Uh09D6gjOGE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
